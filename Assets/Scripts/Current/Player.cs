@@ -4,15 +4,37 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public Vector2 currentVelocity;
+    public Rigidbody2D rb;
+    private Tile[] tiles;   // may be unnecessary, included to show how tiles can be better loaded into player
+
+    private void Start()
     {
-        
+        currentVelocity = Vector2.zero; // start off not moving
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        rb.velocity = currentVelocity;
+    }
+
+    public void setInitialVelocity(float speed)
+    {
+        currentVelocity = new Vector2(speed, 0); // always starts by moving to the right
+    }
+
+    public void addTiles(Tile[] tiles)
+    {
+        this.tiles = tiles;
+        printTiles();
+    }
+
+    public void printTiles()
+    {
+        foreach (Tile tile in tiles)
+        {
+            Debug.Log(tile.gameObject.name);
+        }
     }
 }

@@ -764,6 +764,7 @@ GameObject:
   - component: {fileID: 167577117}
   - component: {fileID: 167577118}
   - component: {fileID: 167577119}
+  - component: {fileID: 167577120}
   m_Layer: 0
   m_Name: CWRotator
   m_TagString: Untagged
@@ -882,6 +883,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &167577120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 167577115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b40abdb70c431347a2a3fb3e3b8c12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &195775537
 GameObject:
   m_ObjectHideFlags: 0
@@ -1030,6 +1043,7 @@ Transform:
   - {fileID: 431178339}
   - {fileID: 1882508259}
   - {fileID: 899781281}
+  - {fileID: 1347775640}
   m_Father: {fileID: 195775541}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1060,6 +1074,7 @@ GameObject:
   - component: {fileID: 431178342}
   - component: {fileID: 431178341}
   - component: {fileID: 431178340}
+  - component: {fileID: 431178343}
   m_Layer: 0
   m_Name: CCWRotator
   m_TagString: Untagged
@@ -1178,6 +1193,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &431178343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 431178338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50baeabef7d302a4e9bfc292969571cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &681268832
 GameObject:
   m_ObjectHideFlags: 0
@@ -2209,26 +2236,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 899781277}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8b5af3ab1782def418d29fb87ce7e481, type: 3}
+  m_Script: {fileID: 11500000, guid: b6de6833f51d30643ad430509742d0aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 3
+  currentVelocity: {x: 5, y: 0}
   rb: {fileID: 899781279}
-  movement: {x: 0, y: 0}
-  startDirection: {x: 1, y: 0}
-  playerCollider: {fileID: 899781283}
-  animator: {fileID: 899781282}
-  breadCollider: {fileID: 1882508262}
-  ducky: {fileID: 1439409230}
-  rotatorCCWs:
-  - {fileID: 431178341}
-  rotatorCWs:
-  - {fileID: 167577118}
-  horizontalFlips: []
-  verticalFlips: []
-  teleporterSet1: []
-  teleporterSet2: []
-  teleporterSet3: []
 --- !u!50 &899781279
 Rigidbody2D:
   serializedVersion: 4
@@ -2360,6 +2372,49 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.7}
   m_EdgeRadius: 0
+--- !u!1 &1347775639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1347775640}
+  - component: {fileID: 1347775641}
+  m_Layer: 0
+  m_Name: Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1347775640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347775639}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 255705160}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347775641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1347775639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc08c3ad593005444a1025177608f8e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1439409230
 GameObject:
   m_ObjectHideFlags: 0
@@ -2378,7 +2433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1439409231
 Transform:
   m_ObjectHideFlags: 0
@@ -2508,7 +2563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1882508259
 Transform:
   m_ObjectHideFlags: 0
