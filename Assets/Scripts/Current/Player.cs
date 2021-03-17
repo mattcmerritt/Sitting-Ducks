@@ -79,7 +79,8 @@ public class Player : MonoBehaviour
         return false;
     }
 
-    // unlikely to catch anything, unless game is running extremely fast
+    // unlikely to catch anything with tiles, unless game is running extremely fast
+    // also handles collecting the ducklings and bread
     private void OnTriggerEnter2D(Collider2D collision)
     {
         Tile currentTile = collision.GetComponent<Tile>();
@@ -89,6 +90,17 @@ public class Player : MonoBehaviour
             if (!currentTile.getTileUsed() && this.hasPassedCenter(collision))
             {
                 currentTile.actOnPlayer(this);
+            }
+        }
+        else
+        {
+            if (collision.tag == "Duckling")
+            {
+                collision.gameObject.SetActive(false);
+            }
+            else if (collision.tag == "Bread")
+            {
+                collision.gameObject.SetActive(false);
             }
         }
     }
