@@ -16,7 +16,6 @@ public abstract class Tile : MonoBehaviour
     public virtual void actOnPlayer(Player duck)
     {
         setTileUsed(true);
-        Debug.Log("Acted on player!");
     }
 
     // method to check if the duck has already used this tile

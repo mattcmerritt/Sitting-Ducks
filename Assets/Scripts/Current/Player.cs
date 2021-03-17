@@ -116,7 +116,6 @@ public class Player : MonoBehaviour
         if (currentTile != null)
         {
             currentTile.setTileUsed(false);
-            Debug.Log("Tile reactivated");
         }
     }
 }
