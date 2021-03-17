@@ -10,10 +10,11 @@ public class Controller : MonoBehaviour
 
     private void Start()
     {
-        Tile[] tiles = Object.FindObjectsOfType<Tile>();    // saving all tiles in the stage to an array
-        duck = FindObjectOfType<Player>();                  // saving reference to player
-        duck.addTiles(tiles);                               // passing the array of tiles to the player so that they can used later
+        duck = FindObjectOfType<Player>();  // saving reference to player
         isWalking = false;
+
+        //Tile[] tiles = Object.FindObjectsOfType<Tile>();    // saving all tiles in the stage to an array
+        //duck.addTiles(tiles);                               // passing the array of tiles to the player so that they can used later
     }
 
     // Update is called once per frame

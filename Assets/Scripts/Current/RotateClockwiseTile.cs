@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class RotateClockwiseTile : Tile
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void actOnPlayer(Player duck)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        base.actOnPlayer(duck);
+        duck.setVelocity(duck.getCurrentVelocity().y, -duck.getCurrentVelocity().x);
     }
 }
