@@ -21,9 +21,6 @@ public class Controller : MonoBehaviour
         {
             Debug.LogError("Critical game objects not loaded.");
         }
-
-        //Tile[] tiles = Object.FindObjectsOfType<Tile>();    // saving all tiles in the stage to an array
-        //duck.addTiles(tiles);                               // passing the array of tiles to the player so that they can used later
     }
 
     // Update is called once per frame

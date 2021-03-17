@@ -45,20 +45,6 @@ public class Player : MonoBehaviour
         transform.position = startingPosition;
     }
 
-/*    public void addTiles(Tile[] tiles)
-    {
-        this.tiles = tiles;
-        printTiles();
-    }
-
-    public void printTiles()
-    {
-        foreach (Tile tile in tiles)
-        {
-            Debug.Log(tile.gameObject.name);
-        }
-    }*/
-
     public bool hasPassedCenter(Collider2D collider)
     {
         // if coming in from the left
