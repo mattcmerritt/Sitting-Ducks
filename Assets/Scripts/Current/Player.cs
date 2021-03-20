@@ -49,17 +49,25 @@ public class Player : MonoBehaviour
     {
         // if coming in from the left
         if (currentVelocity.x > 0)
+        {
             return transform.position.x >= collider.transform.position.x;
+        }
         // if coming in from the right
         else if (currentVelocity.x < 0)
+        {
             return transform.position.x <= collider.transform.position.x;
+        }
 
         // if coming from bottom
         if (currentVelocity.y > 0)
+        { 
             return transform.position.y >= collider.transform.position.y;
+        }
         // if coming from top
         else if (currentVelocity.y < 0)
-            return transform.position.x <= collider.transform.position.x;
+        {
+            return transform.position.y <= collider.transform.position.y;
+        }
 
         // not moving, not a case to catch
         return false;
